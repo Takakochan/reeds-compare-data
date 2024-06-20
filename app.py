@@ -6,6 +6,8 @@ import ftplib
 from io import BytesIO
 import io
 
+headers = {"authorization" : st.secrets["path", "ftpname", "key"],
+           "content-type" : "aaplication/json"}
 
 ftp = FTP_TLS('minty-web.com')
 print('going to the sever....')
