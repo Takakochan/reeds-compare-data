@@ -31,7 +31,7 @@ data1 = df[columns]
 #data = data.drop['Unnamed']
 df = pd.DataFrame(data)
 st.set_option('deprecation.showPyplotGlobalUse', False)
-if st.sidebar.button('Make them Visualised!'):
+if st.sidebar.button('Click for Visualisation!'):
     data1.plot()
     plt.show()
     st.pyplot()
