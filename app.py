@@ -21,7 +21,7 @@ data = pd.read_csv(flo, encoding='UTF8',sep=";")
 data = data.set_index(['Length'])
 df = pd.DataFrame(data)
 
-columns = st.sidebar.multiselect("Columns:", df.columns)
+columns = st.sidebar.multiselect("Select reeds to compare:", df.columns)
 filter = st.sidebar.radio("Choose by:", ("inclusion", "exclusion"))
 
 if filter == "exclusion":
@@ -31,7 +31,7 @@ data1 = df[columns]
 #data = data.drop['Unnamed']
 df = pd.DataFrame(data)
 st.set_option('deprecation.showPyplotGlobalUse', False)
-if st.sidebar.button('Plot graph'):
+if st.sidebar.button('Make them Visualised!'):
     data1.plot()
     plt.show()
     st.pyplot()
