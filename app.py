@@ -6,17 +6,14 @@ import ftplib
 from io import BytesIO
 import io
 
-st.write("key:", st.secrets["key"])
-st.write("ftpname:", st.secrets["ftpname"])
-st.write("path:", st.secrets["path"])
 
 ftp = FTP_TLS('minty-web.com')
 print('going to the sever....')
 print('loged in....')
-ftp.login(ftpname, key)
+ftp.login(st.secrets["ftpname"], st.secrets["key"])
 ftp.prot_p()
 ftp.set_pasv('true')
-ftp.cwd(path)
+ftp.cwd(st.secrets["path"])
 flo = BytesIO()
 flo.seek(0)
 data = pd.read_csv(flo, encoding='UTF8',sep=";")
