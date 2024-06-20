@@ -10,7 +10,7 @@ import io
 ftp = FTP_TLS('minty-web.com')
 print('going to the sever....')
 print('loged in....')
-ftp.login(ftp, key)
+ftp.login(ftpname, key)
 ftp.prot_p()
 ftp.set_pasv('true')
 ftp.cwd(path)
